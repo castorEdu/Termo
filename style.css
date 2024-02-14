@@ -1,0 +1,154 @@
+/* #222626,#94909E,#918594,#EBD0AB,#F2E0B6,#222626,#94909E,#9185 */
+body{
+    height: 100vh;
+    background-color: #a2bcd7;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+.container{
+    display: flex;
+    margin-bottom: 1rem;
+}
+.container-dueto{
+    display: flex;
+    margin-bottom: 1rem;
+}
+.container-terceto{
+    display: flex;
+    margin-bottom: 1rem;
+}
+.container-quarteto{
+    display: flex;
+    margin-bottom: 1rem;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    background-color: #2c4c72;
+    font-size: 2rem;
+    border-radius: 0.7rem;
+    margin-left: 0.5rem;
+    border-bottom: 2px solid blue;
+    color: #a2bcd7;
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: bold;
+}
+.nav{
+    display: flex;
+    text-align: center;
+}
+.acertouLetra{
+    background-color: green;
+}
+.existeLetra{
+    background-color: orange;
+}
+.jogos{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 25rem;
+    font-family: 'Kanit', sans-serif;
+}
+.nav-config{
+    display: flex;
+    justify-content: flex-end;
+    width: 25rem;
+    align-items: center;
+}
+#configuracao{
+    display: flex;
+    justify-content: flex-end;
+}
+#config-panel{
+    background-color: red;
+    width: 50rem;
+    height: 10rem;
+}
+#panel{
+    display: flex;
+    justify-content: space-between;
+}
+.visible{
+    visibility: visible;
+}
+.hidden{
+    visibility: hidden;
+    
+}
+button{
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: 'Honk', system-ui;
+    font-size: 2rem;
+}
+#game-config{
+    display: flex;
+    justify-content: center;
+    height: 4rem;
+    margin-bottom: 1rem;
+
+}
+.nome{
+    width: 70rem;
+}
+.qtdLetras{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(248, 248, 248);
+    width: 30rem;
+    border: 2px solid black;
+    border-radius: 2rem;
+}
+p{
+    cursor: pointer;
+}
+::-webkit-scrollbar{
+    visibility: hidden;
+}
+#telaGameFinish{
+    display: flex;
+    width: 100%;
+    height: 20rem;
+    position: absolute;
+    place-items: center;
+    justify-content: center;
+}
+#telaGameFinish div{
+    display: grid;
+    width: 30rem;
+    height: 10rem;
+    background-color: #217373;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    box-shadow: 3px 3px 3px black;
+    font-family: 'Kanit', sans-serif;
+}
+p{
+    color: #2c4c72;
+}
+.jogos p:hover{
+    transition: 0.5s;
+    color: white;
+    text-decoration: underline;
+}
+h2{
+    color: white;
+}
+#palavraChave{
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    color: white;
+}

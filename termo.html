@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Rubik&family=Honk&family=Bebas+Neue:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav">
+        <div class="jogos">
+            <p onclick="GameSelected(1)">Solo</p>
+            <p onclick="GameSelected(2)">Duo</p>
+            <p onclick="GameSelected(3)">Trio</p>
+            <p onclick="GameSelected(4)">Squad</p>
+        </div>
+        <div class="nome">
+            <button><p>Aurel<span>.io</span></p></button>
+        </div>
+        <div class="nav-config" onclick="ToggleConfig()">
+            <img src="assets/settings.png" alt="">
+        </div>
+    </div>
+    <div id="game-config" class="hidden">
+        <div class="qtdLetras">
+            <button onclick="QuantidadeLetra(1)">5 Letras</button>
+            <button onclick="QuantidadeLetra(2)">6 Letras</button>
+            <button onclick="QuantidadeLetra(3)">7 Letras</button>
+        </div>
+    </div>
+    <div id="telaGameFinish" class="hidden">
+        <div>
+            <h2 id="mensagem">YOU WIN!</h2>
+            <p id="palavraChave"></p>
+        </div>
+    </div>
+    <div id="panel">
+        <div class="content">
+            <div class="container">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+            <div class="container">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+            <div class="container">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+            <div class="container">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+            <div class="container">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+            <div class="container">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
