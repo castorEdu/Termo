@@ -32,13 +32,19 @@ document.addEventListener('keydown',(ev)=>{
                     element[linha].children[coluna-1].innerText = ""
                 }
                 if(DuetoSN){
-                    elementDueto[linha].children[coluna-1].innerText = ""
+                    if(acertouDueto){
+                        elementDueto[linha].children[coluna-1].innerText = ""
+                    }
                 }
                 if(TercetoSN){
-                    elementTerceto[linha].children[coluna-1].innerText = ""
+                    if(acertouTerceto){
+                        elementTerceto[linha].children[coluna-1].innerText = ""
+                    }   
                 }
                 if(QuartetoSN){
-                    elementQuarteto[linha].children[coluna-1].innerText = ""
+                    if(acertouQuarteto){
+                        elementQuarteto[linha].children[coluna-1].innerText = ""
+                    }
                 }
                 coluna -= 1
             }else{
@@ -152,13 +158,6 @@ function verificaQtdLetras(){
     }
     return true
 }
-function ToggleConfig(){
-    const config = document.getElementById('game-config')
-
-    config.classList.toggle('visible')
-    config.classList.toggle('hidden')
-}
-
 function geraPalavra(){
     let numeroAleatorio = 0
     let arrayGeral
@@ -181,8 +180,6 @@ function geraPalavra(){
         arrayGeral = arraySeteLetras
     }
     for(let i = 0; i<indexGame; i++){
-        console.log(i)
-        console.log(indexGame)
         numeroAleatorio = parseInt(Math.random()*arrayGeral.length)
         if(i == 0){
             palavraTermo = arrayGeral[numeroAleatorio].toUpperCase()
@@ -205,6 +202,7 @@ function corrigeLetraExistente(caracter, ev, palavra){
     let arrayRepetida = []
     let repetidaDigitada = 0
     let repetidaChave = 0
+    let temLetraRepetidaCertaSN = false
     for(let i = 0; i<tamanhoPalavra; i++){
         if(caracter == ev[linha].children[i].innerText){
             arrayRepetida.push(i)
@@ -218,7 +216,20 @@ function corrigeLetraExistente(caracter, ev, palavra){
         if(repetidaDigitada > repetidaChave){
             for(let i = 0; i<arrayRepetida.length;i++){
                 if(palavra[arrayRepetida[i]] == caracter){
+                    temLetraRepetidaCertaSN = true
+                }
+            }
+            for(let i = 0;i<arrayRepetida.length;i++){
+                if(palavra[arrayRepetida[i]] == caracter){
                     return false
+                }else{
+                    if(temLetraRepetidaCertaSN == false){
+                        for (let j = 0; j<repetidaDigitada - (repetidaDigitada-repetidaChave); j++){
+                            console.log(j)
+                            ev[linha].children[arrayRepetida[j]].classList.add('existeLetra')
+                        }
+                        return false
+                    }
                 }
             }
         }
@@ -406,3 +417,4 @@ function QuantidadeLetra(indexQuantidadeLetra){
 window.addEventListener('scroll',()=>{
     window.scrollTo(0,0)
 })
+console.log()
