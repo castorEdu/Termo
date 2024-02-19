@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="main.js" defer></script>
+    <script src="main.js" type="module" defer></script>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,18 +16,18 @@
 <body>
     <div class="nav">
         <div class="jogos">
-            <p onclick="GameSelected(1)">Solo</p>
-            <p onclick="GameSelected(2)">Duo</p>
-            <p onclick="GameSelected(3)">Trio</p>
-            <p onclick="GameSelected(4)">Squad</p>
+            <p id="termo" value="1">Solo</p>
+            <p id="dueto" value="2">Duo</p>
+            <p id="terceto" value="3">Trio</p>
+            <p id="quarteto" value="4">Squad</p>
         </div>
         <div class="nome">
             <h1><b>A</b>u<span>r</span>e<span>l</span>.i<b>o</b></h1>
         </div>
         <div class="qtdLetras">
-            <p onclick="QuantidadeLetra(1)">5 Letras</p>
-            <p onclick="QuantidadeLetra(2)">6 Letras</p>
-            <p onclick="QuantidadeLetra(3)">7 Letras</p>
+            <p id="letras_cinco" value="5">5 Letras</p>
+            <p id="letras_seis" value="6">6 Letras</p>
+            <p id="letras_sete" value="7">7 Letras</p>
         </div>
     </div>
 

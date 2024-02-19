@@ -1,0 +1,26 @@
+export class Bean{
+    palavraTermo = ''
+    palavraDueto = ''
+    palavraTerceto = ''
+    palavraQuarteto = ''
+    tamanhoPalavra = 5
+    DuetoSN = false
+    TercetoSN = false
+    QuartetoSN = false
+    components_columns = 1
+    components_rows = 6
+    element = document.getElementsByClassName('container')
+    elementDueto = document.getElementsByClassName('container-dueto')
+    elementTerceto = document.getElementsByClassName('container-terceto')
+    elementQuarteto = document.getElementsByClassName('container-quarteto')
+    acertouTermo = false
+    acertouDueto = false
+    acertouTerceto = false
+    acertouQuarteto = false
+    gameFinish = document.getElementById('telaGameFinish')
+    mensagem = document.getElementById('mensagem')
+    palavraMensagem = document.getElementById('palavraChave')
+    indexGame = 1
+    column = 0
+    row = 0
+}
