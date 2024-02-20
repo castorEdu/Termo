@@ -103,6 +103,10 @@ quarteto.addEventListener('click',()=>{
 function GameSelected(myValue){
     let menu = document.getElementById('menu')
     menu.classList.toggle('hidden')
+
+    let toggle_menu = document.getElementById('toggle-menu')
+    toggle_menu.children[0].setAttribute('src','assets/menu.svg')
+    
     clean_Panel()
     bean.gameFinish.classList.remove('visible')
     bean.gameFinish.classList.add('hidden')
@@ -187,4 +191,16 @@ toggle_menu.addEventListener('click', ()=>{
     }else{
         toggle_menu.children[0].setAttribute('src','assets/arrow_back.svg')
     }
+})
+
+let help = document.getElementById('help')
+help.addEventListener('click', ()=>{
+    let howTo = document.getElementById('howTo')
+    howTo.classList.toggle('hidden')
+})
+
+let click_howTo = document.getElementById('click-howTo')
+click_howTo.addEventListener('click', ()=>{
+    let howTo = document.getElementById('howTo')
+    howTo.classList.toggle('hidden')
 })

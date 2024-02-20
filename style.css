@@ -10,11 +10,11 @@ body{
     height: auto;
     margin-right: 4rem;
 }
-.container, .container-dueto, .container-terceto, .container-quarteto{
+.container, .container-dueto, .container-terceto, .container-quarteto, .container-howTo{
     display: flex;
     margin-bottom: 1rem;
 }
-.box{
+.box, .box-howTo{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,6 +29,10 @@ body{
     font-family: 'Bebas Neue', sans-serif;
     font-weight: bold;
     box-shadow: 0px 4px 4px #888;
+}
+.box-howTo{
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
 }
 .nav, .qtdLetras{
     display: flex;
@@ -173,4 +177,38 @@ span{
     display: grid;
     place-content: center;
     width: 5vw;
+}
+#help p, #click-howTo{
+    font-weight: bold;
+    font-family: 'Kanit', sans-serif;
+}
+#howTo{
+    left: 28%;
+    position: absolute;
+    width: 40vw;
+    height: 60vh;
+    border-radius: 2rem;
+    background-color: #fff;
+    box-shadow: 1px 2px 4px 4px #888;
+    font-family: 'Kanit', sans-serif;
+    color: #2c4c72;
+}
+#close-howTo{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1rem;
+}
+#content-howTo{
+    display: flex;
+    justify-content: center;
+}
+.desc-jogo{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.ex-01{
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
