@@ -1,9 +1,9 @@
 import {_add} from '/functions.js'
-export class Termo{
+export class Start_Game{
     constructor(beanGame){
         this.beanGame = beanGame
     }
-    start_Termo(){
+    _start(){
         _add(this.beanGame)
     }
 }

@@ -15,26 +15,39 @@
 </head>
 <body>
     <div class="nav">
-        <div class="jogos">
-            <p id="termo" value="1">Solo</p>
-            <p id="dueto" value="2">Duo</p>
-            <p id="terceto" value="3">Trio</p>
-            <p id="quarteto" value="4">Squad</p>
+        <div id="toggle-menu">
+            <img src="assets/menu.svg" alt="" srcset="">
         </div>
         <div class="nome">
             <h1><b>A</b>u<span>r</span>e<span>l</span>.i<b>o</b></h1>
         </div>
-        <div class="qtdLetras">
-            <p id="letras_cinco" value="5">5 Letras</p>
-            <p id="letras_seis" value="6">6 Letras</p>
-            <p id="letras_sete" value="7">7 Letras</p>
+        <div id="help">
+            <p>Como Jogar?</p>
         </div>
     </div>
-
     <div id="telaGameFinish" class="hidden">
-        <div>
+        <div class="telaFinish-content">
+            <div id="parent-close">
+                <p id="close">X</p>
+            </div>
             <h2 id="mensagem">YOU WIN!</h2>
             <p id="palavraChave"></p>
+        </div>
+    </div>
+    <div id="menu" class="hidden">
+        <div class="menu-content">
+            <div class="jogos">
+                <p id="termo" value="1">Solo</p>
+                <p id="dueto" value="2">Duo</p>
+                <p id="terceto" value="3">Trio</p>
+                <p id="quarteto" value="4">Squad</p>
+            </div>
+            <div class="separador"></div>
+            <div class="qtdLetras">
+                <p id="letras_cinco" value="5">5 Letras</p>
+                <p id="letras_seis" value="6">6 Letras</p>
+                <p id="letras_sete" value="7">7 Letras</p>
+            </div>
         </div>
     </div>
     <div id="panel">

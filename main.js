@@ -1,11 +1,7 @@
-import { Termo } from '/termo.js'
-import { Dueto } from '/dueto.js'
-import { Terceto } from '/terceto.js'
-import { Quarteto } from '/quarteto.js'
+import { Start_Game } from '/startGame.js'
 import { Bean } from '/bean.js'
 import {verificaQtdLetras, validaLetraCerta, PalavraCertaSN, validaLetraTeclado, geraPalavra} from '/functions.js'
 let bean = new Bean
-
 geraPalavra(bean)
 document.addEventListener('keydown',(ev)=>{
     if (validaLetraTeclado(ev)){
@@ -16,17 +12,17 @@ document.addEventListener('keydown',(ev)=>{
                     bean.element[bean.row].children[bean.column-1].innerText = ""
                 }
                 if(bean.DuetoSN){
-                    if(bean.acertouDueto){
+                    if(bean.acertouDueto == false){
                         bean.elementDueto[bean.row].children[bean.column-1].innerText = ""
                     }
                 }
                 if(bean.TercetoSN){
-                    if(bean.acertouTerceto){
+                    if(bean.acertouTerceto == false){
                         bean.elementTerceto[bean.row].children[bean.column-1].innerText = ""
                     }   
                 }
                 if(bean.QuartetoSN){
-                    if(bean.acertouQuarteto){
+                    if(bean.acertouQuarteto == false){
                         bean.elementQuarteto[bean.row].children[bean.column-1].innerText = ""
                     }
                 }
@@ -83,7 +79,7 @@ document.addEventListener('keydown',(ev)=>{
             }
             bean.row += 1
             bean.column = 0
-            PalavraCertaSN()
+            PalavraCertaSN(bean)
         }
     }
     
@@ -105,6 +101,8 @@ quarteto.addEventListener('click',()=>{
     GameSelected(4)
 })
 function GameSelected(myValue){
+    let menu = document.getElementById('menu')
+    menu.classList.toggle('hidden')
     clean_Panel()
     bean.gameFinish.classList.remove('visible')
     bean.gameFinish.classList.add('hidden')
@@ -113,19 +111,8 @@ function GameSelected(myValue){
     bean.indexGame = myValue
     GameProperties(parseInt(myValue))
     geraPalavra(bean)
-    if(parseInt(myValue) == 1){
-        let game_termo = new Termo(bean)
-        game_termo.start_Termo()
-    }else if(parseInt(myValue) == 2){
-        let game_dueto = new Dueto(bean)
-        game_dueto.start_Dueto()
-    }else if(parseInt(myValue) == 3){
-        let game_terceto = new Terceto(bean)
-        game_terceto.start_Terceto()
-    }else if(parseInt(myValue) == 4){
-        let game_quarteto = new Quarteto(bean)
-        game_quarteto.start_Quarteto()
-    }
+    let game = new Start_Game(bean)
+    game._start()
 }
 function GameProperties(n){
     if (n == 1){
@@ -173,10 +160,10 @@ let sete = document.getElementById('letras_sete')
 sete.addEventListener('click',()=>{
     QuantidadeLetra(sete.getAttribute('value'))
 })
-function QuantidadeLetra(QtdLetras){
+function QuantidadeLetra(QtdLetras){ 
     bean.tamanhoPalavra = parseInt(QtdLetras)
     GameSelected(bean.indexGame)
-    geraPalavra()
+    geraPalavra(bean)
 }
 function clean_Panel(){
     let body = document.getElementsByTagName('body')
@@ -185,4 +172,19 @@ function clean_Panel(){
 }
 window.addEventListener('scroll',()=>{
     window.scrollTo(0,0)
+})
+
+document.getElementById('close').addEventListener('click', ()=>{
+    let telaGameFinish = document.getElementById('telaGameFinish')
+    telaGameFinish.classList.toggle('hidden')
+})
+
+let toggle_menu = document.getElementById('toggle-menu')
+toggle_menu.addEventListener('click', ()=>{
+    let menu = document.getElementById('menu')
+    if (menu.classList.toggle('hidden') == true){
+        toggle_menu.children[0].setAttribute('src','assets/menu.svg')
+    }else{
+        toggle_menu.children[0].setAttribute('src','assets/arrow_back.svg')
+    }
 })

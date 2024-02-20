@@ -59,7 +59,7 @@ export function validaLetraCerta(letter,index,word,selectedElement, bean){
                 continue
             }else{
                 if(word.includes(letter)){
-                    if (corrigeLetraExistente(letter,selectedElement,word)){
+                    if (corrigeLetraExistente(letter,selectedElement,word, bean)){
                         selectedElement[bean.row].children[i].classList.add('existeLetra')
                     }
                 }
@@ -67,7 +67,7 @@ export function validaLetraCerta(letter,index,word,selectedElement, bean){
         }
     }
 }
-function corrigeLetraExistente(caracter, el, wrd){
+function corrigeLetraExistente(caracter, el, wrd, bean){
     let arrayRepetida = []
     let repetidaDigitada = 0
     let repetidaChave = 0
@@ -104,23 +104,23 @@ function corrigeLetraExistente(caracter, el, wrd){
     }
     return true
 }
-export function PalavraCertaSN(){
+export function PalavraCertaSN(bean){
     if(bean.acertouTermo == false){
-        bean.acertouTermo = verificaPalavra(bean.palavraTermo,bean.element)
+        bean.acertouTermo = verificaPalavra(bean.palavraTermo,bean.element, bean)
     }
     if(bean.DuetoSN == true){
         if(bean.acertouDueto == false){
-            bean.acertouDueto = verificaPalavra(bean.palavraDueto,bean.elementDueto)
+            bean.acertouDueto = verificaPalavra(bean.palavraDueto,bean.elementDueto, bean)
         }
     }
     if(bean.TercetoSN == true){
         if(bean.acertouTerceto == false){
-            bean.acertouTerceto  = verificaPalavra(bean.palavraTerceto,bean.elementTerceto)
+            bean.acertouTerceto  = verificaPalavra(bean.palavraTerceto,bean.elementTerceto, bean)
         }
     }
     if(bean.QuartetoSN == true){
         if(bean.acertouQuarteto == false){
-            bean.acertouQuarteto = verificaPalavra(bean.palavraQuarteto,bean.elementQuarteto)
+            bean.acertouQuarteto = verificaPalavra(bean.palavraQuarteto,bean.elementQuarteto, bean)
         }
     }
 
@@ -181,7 +181,7 @@ export function PalavraCertaSN(){
         }
     }
 }
-function verificaPalavra(p,e){
+function verificaPalavra(p,e, bean){
     let palavraDigitada = ""
     for(let i = 0; i<p.length;i++){
         palavraDigitada += e[bean.row-1].children[i].innerText
